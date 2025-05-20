@@ -1,0 +1,323 @@
+/* Binary Rain Effect */
+.binary-rain-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.binary-column {
+    position: absolute;
+    top: -100px;
+    color: var(--accent-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    line-height: 1;
+    white-space: nowrap;
+    text-shadow: 0 0 5px var(--accent-color);
+    animation-name: binary-rain;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes binary-rain {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(calc(100vh + 100px));
+        opacity: 0;
+    }
+}
+
+/* Enhanced Hero Section */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Code Editor Enhancements */
+.enhanced-code-editor {
+    background-color: #1a1b26;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border: 1px solid #2c2e3e;
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.enhanced-code-editor:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.editor-header {
+    background-color: #24283b;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #2c2e3e;
+}
+
+.editor-body {
+    display: flex;
+    max-height: 900px;
+}
+
+.line-numbers {
+    background-color: #1f2335;
+    padding: 1rem 0.75rem;
+    color: #565f89;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    text-align: right;
+    user-select: none;
+    border-right: 1px solid #2c2e3e;
+}
+
+.code-content {
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    flex: 1;
+}
+
+/* Terminal Section */
+.terminal-section {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem; /* Added more space before buttons */
+    background-color: #1a1b26;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    border: 1px solid #2c2e3e;
+}
+
+.terminal-header {
+    background-color: #24283b;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #2c2e3e;
+}
+
+.terminal-title {
+    margin-left: 1rem;
+    color: #a9b1d6;
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+}
+
+.terminal-body {
+    padding: 1rem;
+    color: #c0caf5;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.command-line {
+    display: flex;
+    margin-bottom: 0.75rem;
+}
+
+.prompt {
+    color: #7aa2f7;
+    margin-right: 0.5rem;
+}
+
+.command {
+    color: #c0caf5;
+}
+
+.command-output {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    color: #a9b1d6;
+}
+
+.current-command {
+    display: flex;
+    align-items: center;
+}
+
+.current-input {
+    color: #c0caf5;
+}
+
+.blinking-cursor {
+    display: inline-block;
+    color: #c0caf5;
+    animation: blink 1s step-end infinite;
+    margin-left: 0.25rem;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Hero CTA Buttons */
+.hero-cta {
+    display: flex;
+    gap: 1.5rem; /* Increased gap between buttons */
+    margin-top: 2rem; /* Added more space above buttons */
+}
+
+/* Syntax Highlighting */
+.keyword { color: #ff79c6; }
+.variable { color: #bd93f9; }
+.property { color: #8be9fd; }
+.string { color: #f1fa8c; }
+.comment { color: #6272a4; }
+.function { color: #50fa7b; }
+.number { color: #bd93f9; }
+.operator { color: #ff79c6; }
+.boolean { color: #bd93f9; }
+
+/* Floating Binary Elements */
+.floating-binary {
+    position: absolute;
+    color: var(--accent-color);
+    font-family: 'Fira Code', monospace;
+    opacity: 0.2;
+    pointer-events: none;
+    animation: float-binary 15s linear infinite;
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+@keyframes float-binary {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(20px, 20px) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 0, 0, 0);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff79c6;
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: 1px 0 #8be9fd;
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip: rect(2px, 9999px, 56px, 0);
+    }
+    20% {
+        clip: rect(25px, 9999px, 32px, 0);
+    }
+    40% {
+        clip: rect(49px, 9999px, 78px, 0);
+    }
+    60% {
+        clip: rect(82px, 9999px, 12px, 0);
+    }
+    80% {
+        clip: rect(14px, 9999px, 65px, 0);
+    }
+    100% {
+        clip: rect(61px, 9999px, 23px, 0);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip: rect(18px, 9999px, 42px, 0);
+    }
+    20% {
+        clip: rect(65px, 9999px, 12px, 0);
+    }
+    40% {
+        clip: rect(32px, 9999px, 54px, 0);
+    }
+    60% {
+        clip: rect(15px, 9999px, 75px, 0);
+    }
+    80% {
+        clip: rect(62px, 9999px, 21px, 0);
+    }
+    100% {
+        clip: rect(38px, 9999px, 49px, 0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    
+    .hero-content, 
+    .hero-visual {
+        max-width: 100%;
+    }
+    
+    .enhanced-code-editor {
+        transform: none;
+    }
+    
+    .binary-column {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .editor-body {
+        max-height: 300px;
+    }
+    
+    .line-numbers,
+    .code-content {
+        font-size: 0.8rem;
+    }
+    
+    .terminal-body {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .binary-rain-container {
+        opacity: 0.1;
+    }
+}

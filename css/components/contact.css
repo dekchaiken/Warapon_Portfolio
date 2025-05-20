@@ -1,0 +1,253 @@
+/* Contact Section */
+.contact-content {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+}
+
+.contact-link,
+.contact-text {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--card-bg);
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background: var(--accent-color);
+}
+
+.social-link img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.social-link:hover img {
+    opacity: 1;
+}
+
+/* Light Mode Adjustments */
+.light-mode .contact-item {
+    background: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .social-link {
+    background: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-item {
+        padding: 0.75rem;
+    }
+
+    .contact-link,
+    .contact-text {
+        font-size: 1rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-link img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.api-docs {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.api-header {
+    background-color: var(--bg-tertiary);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.api-title {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.api-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.api-content {
+    padding: 1.5rem;
+}
+
+.endpoint {
+    margin-bottom: 2rem;
+}
+
+.endpoint:last-child {
+    margin-bottom: 0;
+}
+
+.endpoint-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.method {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.method.get { background-color: #50fa7b; color: #282a36; }
+.method.post { background-color: #8be9fd; color: #282a36; }
+.method.put { background-color: #ffb86c; color: #282a36; }
+.method.delete { background-color: #ff5555; color: #282a36; }
+
+.endpoint-path {
+    font-family: 'Fira Code', monospace;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.endpoint-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.parameters {
+    margin-bottom: 1rem;
+}
+
+.parameter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.parameter-name {
+    font-family: 'Fira Code', monospace;
+    color: var(--text-primary);
+    min-width: 120px;
+}
+
+.parameter-type {
+    color: #8be9fd;
+    font-family: 'Fira Code', monospace;
+}
+
+.parameter-description {
+    color: var(--text-secondary);
+    flex: 1;
+}
+
+.response {
+    background-color: var(--bg-tertiary);
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+.response pre {
+    margin: 0;
+}
+
+/* Light mode adjustments */
+.light-mode .api-docs {
+    background-color: #f8f9fa;
+}
+
+.light-mode .api-header {
+    background-color: #e9ecef;
+}
+
+.light-mode .response {
+    background-color: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .endpoint-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .parameter {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .parameter-name {
+        min-width: auto;
+    }
+} 

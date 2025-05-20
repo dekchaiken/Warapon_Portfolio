@@ -1,0 +1,242 @@
+/* Contact Section - Terminal Mockup */
+.contact-terminal-mockup {
+    background-color: #1a1b26;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 2rem;
+    border: 1px solid #2c2e3e;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Terminal Header */
+.contact-terminal-mockup .terminal-header {
+    background-color: #24283b;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #2c2e3e;
+}
+
+.contact-terminal-mockup .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.contact-terminal-mockup .dot.red { background-color: #f7768e; }
+.contact-terminal-mockup .dot.yellow { background-color: #e0af68; }
+.contact-terminal-mockup .dot.green { background-color: #9ece6a; }
+
+.contact-terminal-mockup .terminal-title {
+    margin-left: 1rem;
+    color: #a9b1d6;
+    font-size: 0.9rem;
+}
+
+/* Terminal Body */
+.contact-terminal-mockup .terminal-body {
+    padding: 1.5rem;
+    color: #c0caf5;
+    line-height: 1.6;
+    max-height: 1000px;
+}
+
+/* Terminal History */
+.terminal-history {
+    margin-bottom: 2rem;
+}
+
+.command-block {
+    margin-bottom: 1.5rem;
+}
+
+.command-line {
+    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.prompt {
+    color: #7aa2f7;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.command {
+    color: #c0caf5;
+    font-weight: 500;
+}
+
+.command-output {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* JSON Output Styling */
+.json-output {
+    color: #c0caf5;
+    margin-left: 1rem;
+}
+
+.json-line {
+    padding: 0.1rem 0;
+}
+
+.json-brace {
+    color: #bb9af7;
+    font-weight: 500;
+}
+
+.json-key {
+    color: #7dcfff;
+    margin-right: 0.25rem;
+}
+
+.json-string {
+    color: #9ece6a;
+}
+
+/* Output Styling */
+.output-line {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.output-success {
+    color: #9ece6a;
+    font-weight: 500;
+}
+
+.output-info {
+    color: #7aa2f7;
+    font-weight: 500;
+}
+
+/* Contact Methods */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(36, 40, 59, 0.7);
+    border-radius: 8px;
+    border: 1px solid #2c2e3e;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-method:hover {
+    background-color: rgba(58, 62, 85, 0.7);
+    border-color: #7aa2f7;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.method-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(58, 62, 85, 0.5);
+    border-radius: 8px;
+}
+
+.method-content {
+    flex: 1;
+}
+
+.method-name {
+    font-weight: 600;
+    color: #7aa2f7;
+    margin-bottom: 0.25rem;
+}
+
+.method-value {
+    color: #a9b1d6;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Current Command */
+.current-command {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.current-input {
+    color: #c0caf5;
+}
+
+/* Blinking Cursor */
+.blinking-cursor {
+    display: inline-block;
+    color: #c0caf5;
+    animation: blink 1s step-end infinite;
+    margin-left: 0.25rem;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-terminal-mockup .terminal-body {
+        padding: 1rem;
+    }
+    
+    .command-line {
+        font-size: 0.85rem;
+    }
+    
+    .prompt {
+        font-size: 0.85rem;
+    }
+}
+
+/* Icon Colors */
+.email-icon {
+    background-color: rgba(247, 118, 142, 0.2);
+    color: #f7768e;
+}
+
+.phone-icon {
+    background-color: rgba(158, 206, 106, 0.2);
+    color: #9ece6a;
+}
+
+.linkedin-icon {
+    background-color: rgba(122, 162, 247, 0.2);
+    color: #7aa2f7;
+}
+
+.github-icon {
+    background-color: rgba(187, 154, 247, 0.2);
+    color: #bb9af7;
+}

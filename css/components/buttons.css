@@ -1,0 +1,70 @@
+.btn {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+    border-radius: var(--border-radius);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-speed) var(--transition-ease);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary Button - styled like a function call */
+.btn-primary {
+    background-color: var(--color-function); /* Orange */
+    color: var(--bg-primary); /* Dark text on light button for contrast */
+    border-color: var(--color-function);
+}
+.btn-primary:hover {
+    background-color: hsl(from var(--color-function) h s calc(l + 5%)); /* Slightly lighter orange */
+    box-shadow: 0 0 15px hsla(from var(--color-function) h s l / 0.5);
+    transform: translateY(-2px);
+    color: #fab387;
+    text-decoration: none;
+}
+body.light-mode .btn-primary {
+    color: var(--bg-secondary); /* White text */
+}
+body.light-mode .btn-primary:hover {
+    color: var(--bg-secondary);
+}
+
+
+/* Secondary Button - styled like an object/params */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-variable); /* Blue */
+    border: 1px solid var(--color-variable);
+}
+.btn-secondary:hover {
+    background-color: hsla(from var(--color-variable) h s l / 0.1); /* Faint blue bg */
+    color: var(--color-variable);
+    box-shadow: 0 0 10px hsla(from var(--color-variable) h s l / 0.3);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Outline Button */
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-accent);
+    border: 1px solid var(--text-accent);
+}
+.btn-outline:hover {
+    background-color: hsla(from var(--text-accent) h s l / 0.1);
+    color: var(--text-accent);
+    box-shadow: 0 0 10px hsla(from var(--text-accent) h s l / 0.3);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+.btn-outline .arrow {
+    display: inline-block;
+    transition: transform 0.2s ease-out;
+}
+.btn-outline:hover .arrow {
+    transform: translateX(5px);
+} 

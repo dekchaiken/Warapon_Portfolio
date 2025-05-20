@@ -1,0 +1,314 @@
+/* Console Popup Styles */
+.console-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.console-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.console-popup {
+    width: 700px;
+    max-width: 90%;
+    background-color: #1a1b26;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(122, 162, 247, 0.3);
+    border: 1px solid #2c2e3e;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* Add terminal scanlines effect */
+.console-popup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.15;
+}
+
+.console-popup-overlay.active .console-popup {
+    transform: translateY(0);
+}
+
+.console-header {
+    background-color: #24283b;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #2c2e3e;
+}
+
+.console-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.console-title-text {
+    color: #a9b1d6;
+    font-size: 0.9rem;
+    font-family: 'Fira Code', monospace;
+    margin-left: 0.5rem;
+}
+
+.console-close {
+    color: #a9b1d6;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.console-close:hover {
+    color: #f7768e;
+}
+
+.console-body {
+    padding: 1rem;
+    font-family: 'Fira Code', monospace;
+    color: #c0caf5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.console-log {
+    margin-bottom: 0.75rem;
+}
+
+.log-time {
+    color: #565f89;
+    margin-right: 0.5rem;
+}
+
+.log-type {
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+
+.log-type {
+    font-weight: 700;
+    margin-right: 0.5rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+}
+
+.log-type.info {
+    color: #1a1b26;
+    background-color: #7aa2f7;
+}
+
+.log-type.success {
+    color: #1a1b26;
+    background-color: #9ece6a;
+}
+
+.log-type.warning {
+    color: #1a1b26;
+    background-color: #e0af68;
+}
+
+.log-type.error {
+    color: #1a1b26;
+    background-color: #f7768e;
+}
+
+.log-message {
+    color: #c0caf5;
+}
+
+.log-progress {
+    margin: 0.75rem 0;
+    height: 6px;
+    background-color: #2c2e3e;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Glitch effect for progress bar */
+.log-progress.glitch-effect {
+    position: relative;
+}
+
+.log-progress.glitch-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(247, 118, 142, 0.5);
+    opacity: 0;
+    animation: glitch-bar 2s infinite;
+    z-index: 1;
+}
+
+@keyframes glitch-bar {
+    0% { opacity: 0; transform: translateX(-10px); }
+    2% { opacity: 0.8; transform: translateX(10px); }
+    4% { opacity: 0; transform: translateX(0); }
+    25% { opacity: 0; }
+    27% { opacity: 0.5; transform: translateX(5px); }
+    29% { opacity: 0; transform: translateX(0); }
+    100% { opacity: 0; }
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #7aa2f7;
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: progress-shine 1.5s infinite;
+}
+
+@keyframes progress-shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.download-bar {
+    background-color: #9ece6a;
+}
+
+.binary-text {
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 1px;
+}
+
+.decrypting-text {
+    display: inline-block;
+    min-width: 200px;
+}
+
+.console-footer {
+    padding: 1rem;
+    border-top: 1px solid #2c2e3e;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.console-button {
+    background-color: #7aa2f7;
+    color: #1a1b26;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.25rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.console-button:hover {
+    background-color: #5d8df3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(122, 162, 247, 0.3);
+}
+
+.console-button:disabled {
+    background-color: #565f89;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Glowing button effect */
+.glowing-button {
+    background-color: #9ece6a !important;
+    color: #1a1b26 !important;
+    animation: pulse-glow 2s infinite;
+    box-shadow: 0 0 10px rgba(158, 206, 106, 0.5);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.glowing-button:hover {
+    animation: pulse-glow 1s infinite;
+    background-color: #a9e07c !important;
+    box-shadow: 0 0 15px rgba(158, 206, 106, 0.7);
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(158, 206, 106, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(158, 206, 106, 0.8), 0 0 20px rgba(158, 206, 106, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(158, 206, 106, 0.5);
+    }
+}
+
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Typing animation */
+.typing {
+    border-right: 2px solid #7aa2f7;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #7aa2f7 }
+}
